@@ -16,20 +16,22 @@
           @click="option.model = option.model === 1 ? null : 1"
           :class="{ active: option.model === 1 }"
           v-text="'Ежедневно'" />
-        <td @click="option.model = option.model === 2 ? null : 2" :class="{ active: option.model === 2 }">Несколько раз в неделю
-        </td>
-        <td>Еженедельно<input v-model="option.model" value="3" type="radio" :name="option.id"></td>
-        <td>Ежемесячно<input v-model="option.model" value="4" type="radio" :name="option.id"></td>
-        <td>Редко/Никогда<input v-model="option.model" value="5" type="radio" :name="option.id"></td>
-        <!-- <td> -->
-          <!-- <select v-model="option.value" :key="option.id">
-            <option :value="1">Ежедневно</option>
-            <option :value="2">Несколько раз в неделю</option>
-            <option :value="3">Еженедельно</option>
-            <option :value="4">Ежемесячно</option>
-            <option :value="5">Редко/Никогда</option>
-          </select> -->
-        <!-- </td> -->
+        <td
+          @click="option.model = option.model === 2 ? null : 2"
+          :class="{ active: option.model === 2 }"
+          v-text="'Несколько раз в неделю'" />
+        <td
+          @click="option.model = option.model === 3 ? null : 3"
+          :class="{ active: option.model === 3 }"
+          v-text="'Еженедельно'" />
+        <td
+          @click="option.model = option.model === 4 ? null : 4"
+          :class="{ active: option.model === 4 }"
+          v-text="'Ежемесячно'" />
+        <td
+          @click="option.model = option.model === 4 ? null : 4"
+          :class="{ active: option.model === 4 }"
+          v-text="'Редко/Никогда'" />
       </tr>
     </table>
     <button @click="send">Отправить</button>
