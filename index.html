@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+    <table>
+      <tr v-for="option in options">
+        <td>{{ option.title }}</td>
+        <td
+          @click="option.model = option.model === 1 ? null : 1"
+          :class="{ active: option.model === 1 }"
+          v-text="'Ежедневно'" />
+        <td @click="option.model = option.model === 2 ? null : 2" :class="{ active: option.model === 2 }">Несколько раз в неделю
+        </td>
+        <td>Еженедельно<input v-model="option.model" value="3" type="radio" :name="option.id"></td>
+        <td>Ежемесячно<input v-model="option.model" value="4" type="radio" :name="option.id"></td>
+        <td>Редко/Никогда<input v-model="option.model" value="5" type="radio" :name="option.id"></td>
+        <!-- <td> -->
+          <!-- <select v-model="option.value" :key="option.id">
+            <option :value="1">Ежедневно</option>
+            <option :value="2">Несколько раз в неделю</option>
+            <option :value="3">Еженедельно</option>
+            <option :value="4">Ежемесячно</option>
+            <option :value="5">Редко/Никогда</option>
+          </select> -->
+        <!-- </td> -->
+      </tr>
+    </table>
+    <button @click="send">Отправить</button>
+    <!--   Раскомментировать строку ниже чтобы посмотреть данные которые отправляются -->
+      <!-- <pre>{{ options }}</pre> -->
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="asdf.js"></script>
+</body>
+</html>
